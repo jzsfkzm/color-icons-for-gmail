@@ -3,15 +3,13 @@
 		"js": [ "jquery-1.6.4.min.js", "script.js" ],
 		"matches": [ "*://mail.google.com/*" ]
 	}],
-	"description": "Color icons for GMail",
+	"description": "Color Icons for GMail",
 	"homepage_url": "http://coloryourgmail.tumblr.com",
 	"icons": {
 		"128": "icon128.png",
 		"16": "icon16.png",
 		"48": "icon48.png"
 	},
-	"key": "MAGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDJy1E7BCQ/M5X9BRhneoyffmutrBrjcly0YOHMBOG0viKACl9RtqLdf8KoJOkRmIi90xxvcNRZope+WrniIcoCEyry03fFr55EjpK/fNHtudncTukFbSO2/7+loRc3bl6YsWPF/0AaBE4XuoChzAVnZGCMyFiFofvBt+ST4O4OfwIDAQAB",
 	"name": "Color Your GMail",
-	"update_url": "http://raw.github.com/jzsfkzm/color-icons-for-gmail/master/updates.xml",
-	"version": "0.7.0"
+	"version": "0.7.2"
 }
