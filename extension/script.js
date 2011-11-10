@@ -25,18 +25,20 @@ jQuery(function () {
 		reply: ['.hB', '.mL'],
 		replyall: ['.mK'],
 		forward: ['.mI', '.gC'],
-		newwindow: ['.gZ'],
+		newwindow: ['.gZ', '.eI'],
 		print: ['.g1'],
 
 		expand: ['.gx'],
 		collapse: ['.gq'],
 		down: [],
-		mail: ['.uEX2Af']
+		mail: ['.uEX2Af'],
+		image: ['.KbtMj']
 	};
 
 	var extra_styles = {
 		chat: 'background-position: -21px 0px !important;',
-		calendar: 'background-position: -42px 0px;'
+		calendar: 'background-position: -42px 0px;',
+		image: 'background-position: -84px -84px;'
 	};
 
 	var style_content = [];
