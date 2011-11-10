@@ -38,7 +38,7 @@ jQuery(function () {
 	var extra_styles = {
 		chat: 'background-position: -21px 0px !important;',
 		calendar: 'background-position: -42px 0px;',
-		image: 'background-position: -84px -84px;'
+		image: 'background-position: -84px -84px !important;'
 	};
 
 	var style_content = [];
