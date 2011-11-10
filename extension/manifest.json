@@ -8,13 +8,13 @@
 			"*://mail.google.com/*"
 		]
 	}],
-	"description": "This extension will replace icons in the new GMail themes with color ones.",
+	"description": "This extension will replace black icons in the new Gmail themes with color ones.",
 	"homepage_url": "https://github.com/jzsfkzm/color-icons-for-gmail",
 	"icons": {
 		"128": "icon128.png",
 		"16": "icon16.png",
 		"48": "icon48.png"
 	},
-	"name": "Color Icons for GMail",
-	"version": "0.7.4"
+	"name": "Color Icons for Gmail",
+	"version": "0.7.5"
 }
