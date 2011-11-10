@@ -1,15 +1,20 @@
 {
 	"content_scripts": [{
-		"js": [ "jquery-1.6.4.min.js", "script.js" ],
-		"matches": [ "*://mail.google.com/*" ]
+		"js": [
+			"jquery-1.6.4.min.js",
+			"script.js"
+		],
+		"matches": [
+			"*://mail.google.com/*"
+		]
 	}],
-	"description": "Color Icons for GMail",
-	"homepage_url": "http://coloryourgmail.tumblr.com",
+	"description": "This extension will replace icons in the new GMail themes with color ones.",
+	"homepage_url": "https://github.com/jzsfkzm/color-icons-for-gmail",
 	"icons": {
 		"128": "icon128.png",
 		"16": "icon16.png",
 		"48": "icon48.png"
 	},
-	"name": "Color Your GMail",
-	"version": "0.7.3"
+	"name": "Color Icons for GMail",
+	"version": "0.7.4"
 }
