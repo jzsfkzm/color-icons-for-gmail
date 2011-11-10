@@ -12,6 +12,6 @@
 	},
 	"key": "MAGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDJy1E7BCQ/M5X9BRhneoyffmutrBrjcly0YOHMBOG0viKACl9RtqLdf8KoJOkRmIi90xxvcNRZope+WrniIcoCEyry03fFr55EjpK/fNHtudncTukFbSO2/7+loRc3bl6YsWPF/0AaBE4XuoChzAVnZGCMyFiFofvBt+ST4O4OfwIDAQAB",
 	"name": "Color Your GMail",
-	"update_url": "http://dl.dropbox.com/u/2322740/ReederForChrome/updates.xmlxxx",
+	"update_url": "http://raw.github.com/jzsfkzm/color-icons-for-gmail/master/updates.xml",
 	"version": "0.7.0"
 }
