@@ -5,22 +5,22 @@ jQuery(function () {
 
 	var icon_selector = {
 		attach: ['.yE', '.gW'],
-		chat: ['.J-KU .srbnEd', '.o3.tk3N6e-I-J3'],
-		calendar: ['.kYKy4c', '.lb87sf'],
-		call: ['.l0q2Kd'],
+		chat: ['.J-KU .aj2', '.o3.T-I-J3'],
+		calendar: ['.anp', '.an1'],
+		call: ['.ana'],
 		buzz: [],
 
-		cog: ['.ykKkhb'],
-		prev: ['.SOLoEf', '.iHkD0e'],
-		next: ['.P1rG1b', '.A65iE'],
-		refresh: ['.cSQWXc'],
-		archive: ['.oqtkzd'],
+		cog: ['.aos'],
+		prev: ['.adj', '.amI'],
+		next: ['.adk', '.amJ'],
+		refresh: ['.asf'],
+		archive: ['.ar8'],
 
-		back: ['.G8oNDd'],
-		tag: ['.J0wwu'],
-		spam: ['.hjiQh'],
-		thrash: ['.HSe1Vd'],
-		file: ['.SwbPNe'],
+		back: ['.ar6'],
+		tag: ['.asb'],
+		spam: ['.asl'],
+		thrash: ['.ar9'],
+		file: ['.ase'],
 
 		reply: ['.hB', '.mL'],
 		replyall: ['.mK'],
@@ -31,8 +31,8 @@ jQuery(function () {
 		expand: ['.gx'],
 		collapse: ['.gq'],
 		down: [],
-		mail: ['.uEX2Af'],
-		image: ['.KbtMj']
+		mail: ['.ank'],
+		image: ['.aeu']
 	};
 
 	var extra_styles = {
