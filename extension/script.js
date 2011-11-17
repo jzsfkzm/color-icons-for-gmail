@@ -5,7 +5,7 @@ jQuery(function () {
 
 	var icon_selector = {
 		attach: ['.yE', '.gW'],
-		chat: ['.J-KU .aj2', '.o3.T-I-J3'],
+		chat: ['.J-KU .aj2', '.o3.T-I-J3', '.xM'],
 		calendar: ['.anp', '.an1'],
 		call: ['.ana'],
 		buzz: [],
