@@ -1,7 +1,22 @@
-/*jslint  */
+/*jslint browser:true */
 /*globals chrome, jQuery */
 jQuery(function () {
-	var icon_name = null;
+	var sets = {
+		keve_black: [
+		    'cog',
+			'prev',
+			'next',
+			'archive',
+			'tag',
+			'spam',
+			'thrash',
+			'file',
+			'reply',
+			'replyall'
+		]
+        // keve_white: [],
+        // silk: []
+	};
 
 	var icon_selector = {
 		attach: ['.yE', '.gW'],
@@ -45,21 +60,38 @@ jQuery(function () {
 	var selector = null,
 		img_selectors = [];
 
-	for (icon_name in icon_selector) {
-		if (icon_selector.hasOwnProperty(icon_name)) {
-			if (icon_selector[icon_name].length > 0) {
-				selector = icon_selector[icon_name].join(",\n");
-				img_selectors.push(selector);
+	function addStyles(options) {
+	    var icon_name = null;
 
-				if (extra_styles[icon_name] !== undefined) {
-					style_content.push(selector + ' {' + extra_styles[icon_name] + '}');
+		for (icon_name in icon_selector) {
+			if (icon_selector.hasOwnProperty(icon_name)) {
+				if (icon_selector[icon_name].length > 0) {
+                    if (sets[options.iconset] === undefined || sets[options.iconset].indexOf(icon_name) !== -1) {
+                        selector = icon_selector[icon_name].join(",\n");
+                        img_selectors.push(selector);
+
+                        if (extra_styles[icon_name] !== undefined) {
+							style_content.push(selector + ' {' + extra_styles[icon_name] + '}');
+						}
+				    }
 				}
 			}
 		}
+
+		var img_src = chrome.extension.getURL('sprite_' + options.iconset + '.png');
+		var css_style = 'background-image: url(' + img_src + ') !important;';
+		style_content.push(img_selectors.join(",\n") + ' {' + css_style + '}');
+		jQuery('#canvas_frame').contents().find('head').append(jQuery('<style type="text/css">' + style_content.join("\n") + '</style>'));
 	}
 
-	var img_src = chrome.extension.getURL('sprite.png');
-	var css_style = 'background-image: url(' + img_src + ') !important;';
-	style_content.push(img_selectors.join(",\n") + ' {' + css_style + '}');
-	jQuery('#canvas_frame').contents().find('head').append(jQuery('<style type="text/css">' + style_content.join("\n") + '</style>'));
+	var port = chrome.extension.connect();
+	port.onMessage.addListener(function (msg) {
+		if (msg.oninit) {
+			// console.log(msg.options);
+			addStyles(msg.options);
+		}
+	});
+	port.postMessage({
+		init : true
+	});
 });

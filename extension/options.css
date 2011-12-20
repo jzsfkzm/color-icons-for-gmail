@@ -1,0 +1,121 @@
+body {
+	background-color: #EEE;
+	font-size: 10pt;
+}
+
+body > div {
+	position: relative;
+	margin: 0px auto;
+/*  width: 425px;*/
+    width: 295px;
+	font-family: sans-serif;
+	background-color: white;
+	border: 1px solid #D2DBED;
+	font-family: Arial, sans-serif;
+	font-size: 13px;
+	-webkit-box-shadow: #888 2px 2px 2px;
+}
+
+body > div > div {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.optionBlock {
+	overflow: hidden;
+/*	height: 30px;*/
+	position: relative;
+}
+
+h2 {
+	font-size: 17px;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+
+label {
+	position: absolute;
+	top: 2px;
+	display: inline-block;
+}
+
+input[type="checkbox"] {
+	position: absolute;
+	right: 0px;
+	width: auto;
+	margin-left: 15px;
+	margin-bottom: 5px;
+	margin-top: 5px;
+	width: auto;
+}
+
+button {
+	position: absolute;
+	top: -4px;
+	right: 0px;
+	background-color: #F3F3F3;
+	-webkit-border-radius: 3px;
+	right: 0px;
+}
+
+#main {
+	display: none;
+	border-radius: 5px;
+}
+
+#icon {
+	width: 25px;
+	padding-right: 10px;
+	vertical-align: bottom;
+}
+
+p {
+	margin-top: 5px;
+	font-style: italic;
+	text-align: justify;
+	color: gray;
+}
+
+input[type="radio"] {
+	float: left;
+}
+
+.demo {
+	float: left;
+	margin: 10px 10px 20px;
+}
+
+.demo .imgset {
+	padding: 5px;
+	height: 105px;
+	width: 105px;
+	background-color: #eee;
+	background-position: 5px 5px;
+	background-repeat: no-repeat;
+}
+
+.demo .label {
+	padding: 3px;
+	text-align: center;
+	background-color: #ff9;
+}
+
+.demo.selected .label {
+	background-color: #cf9;
+}
+
+.demo.hovered .label {
+	background-color: #efc;
+}
+
+#keve_black {
+	background-image: url(sprite_keve_black.png);
+}
+
+#keve_white {
+	background-image: url(sprite_keve_white.png);
+}
+
+#silk {
+	background-image: url(sprite_silk.png);
+}
