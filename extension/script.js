@@ -2,7 +2,7 @@
 /*globals chrome, jQuery */
 jQuery(function () {
 	var sets = {
-		keve_black: [
+		keves_black: [
 		    'cog',
 			'prev',
 			'next',
@@ -14,7 +14,7 @@ jQuery(function () {
 			'reply',
 			'replyall'
 		]
-        // keve_white: [],
+        // keves_white: [],
         // silk: []
 	};
 

@@ -1,7 +1,7 @@
 function initOptions() {
 	// check option stored
 	var default_options = {
-		iconset: 'keve_black'
+		iconset: 'keves_black'
 	};
 	var	options = localStorage.options ? JSON.parse(localStorage.options) : default_options;
 	if (options.iconset === undefined) {

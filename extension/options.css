@@ -108,12 +108,12 @@ input[type="radio"] {
 	background-color: #efc;
 }
 
-#keve_black {
-	background-image: url(sprite_keve_black.png);
+#keves_black {
+	background-image: url(sprite_keves_black.png);
 }
 
-#keve_white {
-	background-image: url(sprite_keve_white.png);
+#keves_white {
+	background-image: url(sprite_keves_white.png);
 }
 
 #silk {
