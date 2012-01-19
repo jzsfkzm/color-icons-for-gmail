@@ -6,7 +6,7 @@ var default_options = {
 
 var possible_iconsets = [
 	'keves_black',
-	// 'keves_white',
+	'keves_white',
 	'silk'
 ];
 

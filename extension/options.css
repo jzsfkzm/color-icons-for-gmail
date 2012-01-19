@@ -6,8 +6,7 @@ body {
 body > div {
 	position: relative;
 	margin: 0px auto;
-/*  width: 425px;*/
-    width: 295px;
+	width: 425px;
 	font-family: sans-serif;
 	background-color: white;
 	border: 1px solid #D2DBED;
