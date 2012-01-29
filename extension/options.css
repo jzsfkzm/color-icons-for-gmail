@@ -29,7 +29,18 @@ body > div > div {
 h2 {
 	font-size: 17px;
 	font-weight: bold;
-	margin-bottom: 20px;
+	margin-top: 0px;
+}
+
+h2 img {
+	position: relative;
+	top: 12px;
+}
+
+div#flattr {
+	float: right;
+	padding-top: 10px;
+	margin-bottom: 3px;
 }
 
 label {
@@ -63,7 +74,7 @@ button {
 }
 
 #icon {
-	width: 25px;
+	width: 48px;
 	padding-right: 10px;
 	vertical-align: bottom;
 }
