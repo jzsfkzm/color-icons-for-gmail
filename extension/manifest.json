@@ -1,5 +1,19 @@
 {
-	"background_page": "background.html",
+	"name": "Color Icons for Gmail",
+	"version": "0.8.8",
+	"manifest_version": 2,
+
+	"description": "This extension will replace black icons in new Gmail themes with color ones.",
+	"homepage_url": "https://github.com/jzsfkzm/color-icons-for-gmail",
+	"icons": {
+		"128": "icon128.png",
+		"16": "icon16.png",
+		"48": "icon48.png"
+	},
+
+	"background": {
+		"page": "background.html"
+	},
 	"content_scripts": [{
 		"js": [
 			"jquery-1.6.4.min.js",
@@ -9,14 +23,11 @@
 			"*://mail.google.com/*"
 		]
 	}],
-	"description": "This extension will replace black icons in new Gmail themes with color ones.",
-	"homepage_url": "https://github.com/jzsfkzm/color-icons-for-gmail",
-	"icons": {
-		"128": "icon128.png",
-		"16": "icon16.png",
-		"48": "icon48.png"
-	},
-	"name": "Color Icons for Gmail",
+
 	"options_page": "options.html",
-	"version": "0.8.6"
+	"web_accessible_resources": [
+		"sprite_keves_black.png",
+		"sprite_keves_white.png",
+		"sprite_silk.png"
+	]
 }

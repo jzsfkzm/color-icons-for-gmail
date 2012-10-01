@@ -81,7 +81,7 @@ jQuery(function () {
 		var img_src = chrome.extension.getURL('sprite_' + options.iconset + '.png');
 		var css_style = 'background-image: url(' + img_src + ') !important;';
 		style_content.push(img_selectors.join(",\n") + ' {' + css_style + '}');
-		jQuery('#canvas_frame').contents().find('head').append(jQuery('<style type="text/css">' + style_content.join("\n") + '</style>'));
+		jQuery('head').append(jQuery('<style type="text/css">' + style_content.join("\n") + '</style>'));
 	}
 
 	var port = chrome.extension.connect();
