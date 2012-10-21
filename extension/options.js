@@ -39,3 +39,17 @@ function initOptions() {
 	// show the whole thing
 	document.getElementById('main').style.display = 'block';
 }
+
+function initFlattr() {
+    var s = document.createElement('script'),
+		t = document.getElementsByTagName('script')[0];
+    s.type = 'text/javascript';
+    s.async = true;
+    s.src = 'https://api.flattr.com/js/0.6/load.js?mode=auto';
+    t.parentNode.insertBefore(s, t);
+}
+
+$(document).ready(function () {
+	initOptions();
+	initFlattr();
+});
