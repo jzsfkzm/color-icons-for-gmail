@@ -1,6 +1,8 @@
 /*jslint browser:true */
 /*globals chrome, jQuery */
 jQuery(function () {
+	var enabled = true;
+
 	var sets = {
 		keves_black: [
 		    'cog',
@@ -88,7 +90,9 @@ jQuery(function () {
 	port.onMessage.addListener(function (msg) {
 		if (msg.oninit) {
 			// console.log(msg.options);
-			addStyles(msg.options);
+			if (enabled === true) {
+				addStyles(msg.options);
+			}
 		}
 	});
 	port.postMessage({
