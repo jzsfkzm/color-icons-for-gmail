@@ -119,13 +119,13 @@ input[type="radio"] {
 }
 
 #keves_black {
-	background-image: url(sprite_keves_black.png);
+	background-image: url(images/sprites/keves_black.png);
 }
 
 #keves_white {
-	background-image: url(sprite_keves_white.png);
+	background-image: url(images/sprites/keves_white.png);
 }
 
 #silk {
-	background-image: url(sprite_silk.png);
+	background-image: url(images/sprites/silk.png);
 }

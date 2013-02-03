@@ -27,9 +27,9 @@
 
 	"options_page": "options.html",
 	"web_accessible_resources": [
-		"sprite_keves_black.png",
-		"sprite_keves_white.png",
-		"sprite_silk.png"
+		"images/sprites/keves_black.png",
+		"images/sprites/keves_white.png",
+		"images/sprites/silk.png"
 	],
 	"content_security_policy": "script-src 'self' https://api.flattr.com; object-src 'self'"
 }
