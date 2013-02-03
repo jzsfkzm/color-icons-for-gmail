@@ -1,6 +1,6 @@
 {
 	"name": "Color Icons for Gmail",
-	"version": "0.8.9",
+	"version": "0.9.0",
 	"manifest_version": 2,
 
 	"description": "This extension will replace black icons in new Gmail themes with color ones.",

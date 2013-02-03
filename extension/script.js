@@ -1,95 +1,102 @@
-/*jslint browser:true */
-/*globals chrome, jQuery */
+/*globals _, chrome, jQuery */
 jQuery(function () {
-	var enabled = true;
+	'use strict';
 
-	var sets = {
-		keves_black: [
-		    'cog',
-			'prev',
-			'next',
-			'archive',
-			'tag',
-			'spam',
-			'thrash',
-			'file',
-			'reply',
-			'replyall'
-		]
-        // keves_white: [],
-        // silk: []
-	};
+	var enabled = true,
 
-	var icon_selector = {
-		attach: ['.yE', '.gW'],
-		chat: ['.J-KU .aj2', '.o3.T-I-J3', '.xM'],
-		calendar: ['.anp', '.an1'],
-		call: ['.ana'],
-		buzz: [],
+		sets = {
+			keves_black: [
+				'cog',
+				'prev',
+				'next',
+				'archive',
+				'tag',
+				'spam',
+				'thrash',
+				'file',
+				'reply',
+				'replyall'
+			]
+			// keves_white: [],
+			// silk: []
+		},
 
-		cog: ['.aos'],
-		prev: ['.adj', '.amI'],
-		next: ['.adk', '.amJ'],
-		refresh: ['.asf'],
-		archive: ['.ar8'],
+		iconSelector = {
+			attach: ['.yE', '.gW'],
+			chat: ['.J-KU .aj2', '.o3.T-I-J3', '.xM'],
+			calendar: ['.anp', '.an1'],
+			call: ['.ana'],
+			buzz: [],
 
-		back: ['.ar6'],
-		tag: ['.asb'],
-		spam: ['.asl'],
-		thrash: ['.ar9'],
-		file: ['.ase'],
+			cog: ['.aos'],
+			prev: ['.adj', '.amI'],
+			next: ['.adk', '.amJ'],
+			refresh: ['.asf'],
+			archive: ['.ar8'],
 
-		reply: ['.hB', '.mL'],
-		replyall: ['.mK'],
-		forward: ['.mI', '.gC'],
-		newwindow: ['.gZ', '.eI'],
-		print: ['.g1'],
+			back: ['.ar6'],
+			tag: ['.asb'],
+			spam: ['.asl'],
+			thrash: ['.ar9'],
+			file: ['.ase'],
 
-		expand: ['.gx'],
-		collapse: ['.gq'],
-		down: [],
-		mail: ['.ank'],
-		image: ['.aeu']
-	};
+			reply: ['.hB', '.mL'],
+			replyall: ['.mK'],
+			forward: ['.mI', '.gC'],
+			newwindow: ['.gZ', '.eI'],
+			print: ['.g1'],
 
-	var extra_styles = {
-		chat: 'background-position: -21px 0px !important;',
-		calendar: 'background-position: -42px 0px;',
-		image: 'background-position: -84px -84px !important;'
-	};
+			expand: ['.gx'],
+			collapse: ['.gq'],
+			down: [],
+			mail: ['.ank'],
+			image: ['.aeu']
+		},
 
-	var style_content = [];
-	var selector = null,
-		img_selectors = [];
+		extraStyles = {
+			// chat: 'background-position: -21px 0px !important;',
+			// calendar: 'background-position: -42px 0px;',
+			// image: 'background-position: -84px -84px !important;'
+		},
+
+		port = chrome.extension.connect();
 
 	function addStyles(options) {
-	    var icon_name = null;
+		var iconName = null,
+			imgSrc = null,
+			cssStyle = null,
+			selector = null,
+			i = null,
+			styleContent = [];
 
-		for (icon_name in icon_selector) {
-			if (icon_selector.hasOwnProperty(icon_name)) {
-				if (icon_selector[icon_name].length > 0) {
-                    if (sets[options.iconset] === undefined || sets[options.iconset].indexOf(icon_name) !== -1) {
-                        selector = icon_selector[icon_name].join(",\n");
-                        img_selectors.push(selector);
+		_.each(iconSelector, function (selectors, iconName) {
+			var imgSelectors = [],
+				x = -21 * (i % 5),
+				y = -21 * Math.floor(i / 5);
 
-                        if (extra_styles[icon_name] !== undefined) {
-							style_content.push(selector + ' {' + extra_styles[icon_name] + '}');
-						}
-				    }
+			if (selectors.length > 0) {
+				imgSrc = chrome.extension.getURL('images/sprites/' + options.iconSet + '.png');
+				cssStyle = 'background: no-repeat url(' + imgSrc + ') ' + x + 'px ' + y + 'px !important;';
+
+				if (sets[options.iconSet] === undefined || sets[options.iconSet].indexOf(iconName) !== -1) {
+					selector = selectors.join(",\n");
+					styleContent.push(selector + ' {' + cssStyle + '}');
+					if (extraStyles[iconName] !== undefined) {
+						styleContent.push(selector + ' {' + extraStyles[iconName] + '}');
+					}
 				}
-			}
-		}
 
-		var img_src = chrome.extension.getURL('sprite_' + options.iconset + '.png');
-		var css_style = 'background-image: url(' + img_src + ') !important;';
-		style_content.push(img_selectors.join(",\n") + ' {' + css_style + '}');
-		jQuery('head').append(jQuery('<style type="text/css">' + style_content.join("\n") + '</style>'));
+				styleContent.push(imgSelectors.join(",\n") + ' {' + cssStyle + '}');
+			}
+
+			i++;
+		});
+
+		jQuery('head').append(jQuery('<style type="text/css">' + styleContent.join("\n") + '</style>'));
 	}
 
-	var port = chrome.extension.connect();
 	port.onMessage.addListener(function (msg) {
 		if (msg.oninit) {
-			// console.log(msg.options);
 			if (enabled === true) {
 				addStyles(msg.options);
 			}

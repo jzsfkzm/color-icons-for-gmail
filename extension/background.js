@@ -1,28 +1,31 @@
 /*jslint browser:true */
 /*globals chrome, localStorage */
-var default_options = {
-	iconset: 'keves_black'
-};
+(function () {
+	"use strict";
 
-var possible_iconsets = [
-	'keves_black',
-	'keves_white',
-	'silk'
-];
+	var defaultOptions = {
+			iconSet: 'keves_black'
+		},
 
-chrome.extension.onConnect.addListener(function (port) {
-	port.onMessage.addListener(function (msg) {
-		var options = localStorage.options ? JSON.parse(localStorage.options) : default_options;
-		if (possible_iconsets.indexOf(options.iconset) === -1) {
-			options.iconset = default_options.iconset;
-		}
+		possibleIconsets = [
+			'keves_black',
+			'keves_white',
+			'silk'
+		];
 
-		if (msg.init) {
-			port.postMessage({
-				oninit: true,
-				options: options
-			});
-		}
+	chrome.extension.onConnect.addListener(function (port) {
+		port.onMessage.addListener(function (msg) {
+			var options = localStorage.options ? JSON.parse(localStorage.options) : defaultOptions;
+			if (possibleIconsets.indexOf(options.iconSet) === -1) {
+				options.iconSet = defaultOptions.iconSet;
+			}
+
+			if (msg.init) {
+				port.postMessage({
+					oninit: true,
+					options: options
+				});
+			}
+		});
 	});
-});
-
+}());
